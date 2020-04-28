@@ -4,5 +4,5 @@ def count_words(string):
     print(string_list)
     return len(string_list)
 
-f = open('words2.txt','r')
+f = open('../words2.txt', 'r')
 print(count_words(f.read()))
