@@ -1,12 +1,10 @@
+import pandas as pd
 
-checklist = ["Portugal", "Germany", "Spain"]
-checklist = [i + "\n" for i in checklist]
 
-with open("countries_missing.txt",'r') as file:
-    content = file.readlines()
+data = pd.read_csv("countries_by_area.txt")
+data["density"] = data["population_2013"] / data["area_sqkm"]
+data = data.sort_values(by="density", ascending=False)
 
-updated_list = sorted(checklist + content)
 
-with open("countries_missing_new.txt",'w') as file:
-    for i in updated_list:
-        file.write(i)
+for index, row in data[:5].iterrows():
+    print(row["country"])

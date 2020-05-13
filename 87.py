@@ -1,21 +1,12 @@
 
-checklist = ["Portugal", "Germany", "India", "Munster", "Spain"]
+checklist = ["Portugal", "Germany", "Spain"]
+checklist = [i + "\n" for i in checklist]
 
-with open("countries_clean.txt",'r') as file:
-    content = file.read()
-    for i in checklist:
-        if i not in content:
-            checklist.remove(i)
-
-print(checklist)
-
-#--------------------
-checklist = ["Portugal", "Germany", "Munster", "Spain"]
-
-with open("countries_clean.txt", "r") as file:
+with open("countries_missing.txt",'r') as file:
     content = file.readlines()
 
-content = [i.rstrip('\n') for i in content]
-checked = [i for i in content if i in checklist]
+updated_list = sorted(checklist + content)
 
-print(checked)
+with open("countries_missing_new.txt",'w') as file:
+    for i in updated_list:
+        file.write(i)

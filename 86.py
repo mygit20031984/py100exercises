@@ -1,15 +1,21 @@
 
-with open("countries.txt",'r') as file:
+checklist = ["Portugal", "Germany", "India", "Munster", "Spain"]
+
+with open("countries_clean.txt",'r') as file:
+    content = file.read()
+    for i in checklist:
+        if i not in content:
+            checklist.remove(i)
+
+print(checklist)
+
+#--------------------
+checklist = ["Portugal", "Germany", "Munster", "Spain"]
+
+with open("countries_clean.txt", "r") as file:
     content = file.readlines()
-#print(content)
 
-content = [i.strip("\n") for i in content if "\n" in i]
-content = [i for i in content if i != ""]
-content = [i for i in content if i != "Top of Page"]
-content = [i for i in content if len(i) != 1]
+content = [i.rstrip('\n') for i in content]
+checked = [i for i in content if i in checklist]
 
-f = open("countries_new.txt", 'w')
-
-for i in content:
-    f.write(i + "\n")
-
+print(checked)
