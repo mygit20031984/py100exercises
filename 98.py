@@ -1,17 +1,25 @@
 from tkinter import *
+
 window = Tk()
 
 file = open("user_gui.txt", "a+")
+
+
 def add():
     file.write(user_value.get() + "\n")
     entry.delete(0, END)
+
+
 def save():
     global file
     file.close()
     file = open("user_gui.txt", "a+")
+
+
 def close():
     file.close()
     window.destroy()
+
 
 user_value = StringVar()
 entry = Entry(window, textvariable=user_value)
