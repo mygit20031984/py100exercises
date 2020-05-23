@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 
-data = pd.read_csv('ten_countries.txt')
+data = pd.read_csv('../ten_countries.txt')
 
 conn = sqlite3.connect("database.db")
 cur = conn.cursor()

@@ -1,6 +1,6 @@
 
 while True:
-    f = open('users.txt', 'r')
+    f = open('../users.txt', 'r')
     UserName = input("Please enter Username:")
     if UserName not in f.read():
         break;

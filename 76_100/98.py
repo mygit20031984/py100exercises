@@ -2,7 +2,7 @@ from tkinter import *
 
 window = Tk()
 
-file = open("user_gui.txt", "a+")
+file = open("../user_gui.txt", "a+")
 
 
 def add():
@@ -13,7 +13,7 @@ def add():
 def save():
     global file
     file.close()
-    file = open("user_gui.txt", "a+")
+    file = open("../user_gui.txt", "a+")
 
 
 def close():

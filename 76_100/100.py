@@ -25,7 +25,7 @@ def sent():
     if request.method == 'POST':
         while True:
             usr = request.form['username']
-            with open("users.txt", "r") as file:
+            with open("../users.txt", "r") as file:
                 users = file.readlines()
                 users = [i.strip("\n") for i in users]
             if usr in users:

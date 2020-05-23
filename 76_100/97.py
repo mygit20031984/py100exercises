@@ -2,7 +2,7 @@ i = []
 
 while True:
     line = input("Enter Value:")
-    file = open("user_data_append.txt", 'a+')
+    file = open("../user_data_append.txt", 'a+')
     if line == "CLOSE":
         for e in i:
             file.write(e + '\n')

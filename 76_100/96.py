@@ -9,6 +9,6 @@ while i != "CLOSE":
     else:
         lst.append(i)
 
-with open("user_data_till_close.txt", 'a+') as file:
+with open("../user_data_till_close.txt", 'a+') as file:
     for i in lst:
         file.write(i + '\n')
